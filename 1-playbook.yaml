@@ -1,0 +1,7 @@
+- firstname: download the nginx server
+  hosts: frontend
+  tasks: #list of tasks
+  - name: install the nginx
+    ansible.builtin.package:
+        name: nginx
+        state: present
