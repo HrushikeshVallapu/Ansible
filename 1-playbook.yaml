@@ -1,5 +1,6 @@
 - name: download the nginx server
   hosts: frontend
+  become: true
   tasks: #list of tasks
   - name: install the nginx
     ansible.builtin.package:
