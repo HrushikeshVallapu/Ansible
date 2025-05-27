@@ -1,4 +1,4 @@
-- firstname: download the nginx server
+- name: download the nginx server
   hosts: frontend
   tasks: #list of tasks
   - name: install the nginx
