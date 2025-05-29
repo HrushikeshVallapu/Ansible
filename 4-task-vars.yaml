@@ -9,8 +9,8 @@
   - name: print the server provisioning details-task1
     vars:
       SERVER_NAME: web02
-      ENVIRONMENT: stage
-      
+     
+      OWNER: Cloud Team
     ansible.builtin.debug:
       msg: "Server {{ SERVER_NAME }} is being provisioned for the {{ ENVIRONMENT }} environment by the {{ OWNER }}."
   
