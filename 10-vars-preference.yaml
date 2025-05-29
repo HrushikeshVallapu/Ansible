@@ -5,9 +5,9 @@
     GREETING: "hellow from play"
   #vars_files:
   #- infovars.yaml
-  vars_prompt:
-  - name: GREETING
-    prompt: plz enter ther greeting
+  # vars_prompt:
+  # - name: GREETING
+  #   prompt: plz enter ther greeting
   tasks:
   - name: print the greeting
     #vars:
@@ -19,4 +19,5 @@
       #1: from arguments
       #2: task level
       #3: from files
-      #4: 
+      #4: from prompt
+      #5:
