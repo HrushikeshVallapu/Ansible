@@ -1,0 +1,22 @@
+- name: PLAY1
+  hosts: frontend
+  tasks:
+  - name: hello from task1 and play 1
+    ansible.builtin.debug:
+     msg: "hellp from task1 and play1"
+  
+  - name: hello from task2 and play 1
+    ansible.builtin.debug:
+     msg: "hellp from task2 and play1"
+
+- name: PLAY2
+  hosts: local
+  connection: local
+  tasks:
+  - name: hello from task1 and play 2
+    ansible.builtin.debug:
+     msg: "hellp from task1 and play1"
+  
+  - name: hello from task2 and play 2
+    ansible.builtin.debug:
+     msg: "hellp from task2 and play1"
