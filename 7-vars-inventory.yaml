@@ -1,0 +1,7 @@
+- name: variable sthrough inventory
+  hosts: local
+  connection: local
+  tasks:
+  - name: printing variables from inventory
+    ansible.builtin.debug:
+      msg: "Server {{ SERVER_NAME }} is being provisioned for the {{ ENVIRONMENT }} environment by the {{ OWNER }}."
