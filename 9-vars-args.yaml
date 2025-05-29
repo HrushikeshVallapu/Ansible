@@ -1,6 +1,6 @@
 - name: variable sthrough inventory
   hosts: local
-  connection: local 
+  connection: local
   tasks:
   - name: printing variables from inventory
     ansible.builtin.debug:
