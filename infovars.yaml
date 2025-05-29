@@ -1,0 +1,3 @@
+SERVER_NAME: web01
+ENVIRONMENT: production
+OWNER: DevOps Team
