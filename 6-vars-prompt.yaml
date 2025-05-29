@@ -1,0 +1,15 @@
+- name: play level variables
+  hosts: local
+  connection: local
+  vars_prompt:
+  - name: username
+    prompt: please enter the username
+    private: true
+  
+  - name: password
+    prompt: please enter the password
+    private: true
+  tasks:
+  - name: print the server provisioning details
+    ansible.builtin.debug:
+      msg: "your username: {{ username }}, password: {{ password }}"
