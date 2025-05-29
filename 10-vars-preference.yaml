@@ -3,8 +3,8 @@
   connection: local
   vars:
     GREETING: "hellow from play"
-  vars_files:
-  - infovars.yaml
+  #vars_files:
+  #- infovars.yaml
   vars_prompt:
   - name: GREETING
     prompt: plz enter ther greeting
@@ -15,6 +15,8 @@
     ansible.builtin.debug:
       msg: "{{ GREETING }}"
 
+#variables preference in ansible:
       #1: from arguments
       #2: task level
-      #3: 
+      #3: from files
+      #4: 
