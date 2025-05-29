@@ -1,0 +1,21 @@
+- name: task level variables
+  hosts: local
+  connection: local
+  vars:
+    SERVER_NAME: web01
+    ENVIRONMENT: production
+    OWNER: DevOps Team
+  tasks:
+  - name: print the server provisioning details-task1
+    vars:
+      SERVER_NAME: web02
+      ENVIRONMENT: stage
+      OWNER: Cloud Team
+    ansible.builtin.debug:
+      msg: "Server {{ SERVER_NAME }} is being provisioned for the {{ ENVIRONMENT }} environment by the {{ OWNER }}."
+  
+  - name: print the server provisioning details- task2
+    ansible.builtin.debug:
+      msg: "Server {{ SERVER_NAME }} is being provisioned for the {{ ENVIRONMENT }} environment by the {{ OWNER }}."
+  
+  
