@@ -7,10 +7,10 @@
   - name: print if number is less than or equal to  100
     ansible.builtin.debug:
       msg: " the number is less than 100"
-    while: number <= 100
+    when: number <= 100
   
   - name: print if number is greater than 100
     ansible.builtin.debug:
       msg: " the number is greater than 100"
-    while: number > 100
+    when: number > 100
     
