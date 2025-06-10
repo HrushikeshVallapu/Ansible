@@ -8,7 +8,7 @@
     - frontend
     sg_id: sg-0142341bd063dfed3
     subnet_id: subnet-05329ad16b7548767
-
+    zone: buymebot.shop
   tasks:
   - name: create ec2 instances
     amazon.aws.ec2_instance:
@@ -25,6 +25,32 @@
   - name: print ec2_output
     ansible.builtin.debug:
       msg: "{{ ec2_output }}"
+
+  - name: create r53 records
+    amazon.aws.route53:
+      state: present
+      zone: "{{ zone }}"
+      record: "{{ item.item }}.{{ zone }}"
+      type: A
+      ttl: 1
+      value: "{{ item.instances[0].private_ip_address }}"
+      wait: true
+      overwrite: true
+    loop: "{{ec2_output.results}}"
+    when: item.item != frontend 
+
+  - name: create r53 records 
+    amazon.aws.route53:
+      state: present
+      zone: "{{ zone }}"
+      record: "{{ zone }}"
+      type: A
+      ttl: 1
+      value: "{{ item.instances[0].private_ip_address }}"
+      wait: true
+      overwrite: true
+    loop: "{{ec2_output.results}}"
+    when: item.item == frontend 
 
       
 
