@@ -37,7 +37,7 @@
       wait: true
       overwrite: true
     loop: "{{ec2_output.results}}"
-    when: item.item != frontend 
+    when: item.item != "frontend" 
 
   - name: create r53 records 
     amazon.aws.route53:
@@ -50,7 +50,7 @@
       wait: true
       overwrite: true
     loop: "{{ec2_output.results}}"
-    when: item.item == frontend 
+    when: item.item == "frontend"
 
       
 
