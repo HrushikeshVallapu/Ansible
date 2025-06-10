@@ -3,7 +3,7 @@
   connection: local
   vars:
     instances:
-    - mysqlll
+    - mysql
     - backend
     - frontend
     sg_id: sg-0142341bd063dfed3
@@ -20,6 +20,11 @@
        tags:
         name: "{{ item }}"
     loop: "{{ instances }}"
+    register: ec2_output
+
+  - name: print ec2_output
+    ansible.builtin.debug:
+      msg: "{{ ec2_output }}"
 
       
 
